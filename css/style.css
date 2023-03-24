@@ -1,0 +1,133 @@
+:root {
+    --header-color: #3347B0;
+    --body-color: #f5f5f5;
+    --footer-color: #3347B0;
+    --text-color: #FFFFFF;
+}
+
+header {
+    height: 10.67vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--header-color);
+}
+
+main {
+    height: 74.30vh;
+    align-items: center;
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--body-color);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+    background-color: var(--footer-color);
+}
+
+.logoSchool {
+    margin-left: 96px;
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.textSchool {
+    margin-left: 11px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.buttonExit {
+    color: var(--text-color);
+    margin-right: 100px;
+    align-items: center;
+    padding: 10px;
+    font-size: 36px;
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.exitText {
+    font-weight: 500;
+}
+
+.devices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 96px;
+    height: 55vh;
+}
+
+.devices p {
+    font-size: 57px;
+    font-weight: 300;
+    width: 25vw;
+}
+
+.devices span {
+    color: var(--header-color);
+    font-weight: 500;
+}
+
+.contacts {
+    margin-left: 96px;
+    gap: 12px;
+    display: grid;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.contacts i {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.copyright {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.social-media-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-media-icon {
+    height: 48px;
+    width: 48px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: all .5s;
+}
+.social-media-icon:hover {
+    background-color: var(--header-color);
+    border: 2px solid var(--header-color);
+}
