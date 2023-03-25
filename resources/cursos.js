@@ -12,3 +12,7 @@ var cursos = [
         "carga" :   "1200"
     }
 ];
+
+module.exports = {
+    cursos
+}

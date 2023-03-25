@@ -1,8 +1,8 @@
 'use strict'
 
-import { loadCard } from "./homeAPI"
+import { loadCard } from "./homeAPI.js"
 
-const cards = await loadCard;
+const cards = await loadCard();
 
 const createCard = (card) => {
     const courseButtons = document.createElement('div')
@@ -34,3 +34,5 @@ const loadCards = () => {
 
     listCourses.replaceChildren(...coursesList)
 }
+
+loadCards()
