@@ -71,10 +71,14 @@ footer {
     gap: 44px;
 }
 
+.img_studant {
+    width: 16vw;
+}
+
 .devices p {
     font-size: 4rem;
     font-weight: 300;
-    width: 25vw;
+    width: 29vw;
 }
 
 .devices span {

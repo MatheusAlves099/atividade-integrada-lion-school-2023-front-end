@@ -32,8 +32,9 @@ header {
 
 .headerStatus {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
     height: 40px;
     width: 100%;
     color: var(--header-color);
@@ -43,8 +44,8 @@ header {
 
 .legendaContainer {
     display: flex;
-    width: 400px;
-    justify-content: space-evenly;
+    gap: 24px;
+    width: 350px;
 }
 
 .squareBlue {
@@ -63,13 +64,11 @@ header {
 
 main {
     display: flex;
+    padding-top: 35px;
+    padding-bottom: 114px;
+    height: auto;
     align-items: center;
     flex-direction: column;
-}
-
-.title-course {
-    font-size: 4rem;
-    color: var(--header-color);
 }
 
 footer {
@@ -96,7 +95,7 @@ footer {
     color: var(--text-color);
 }
 
-.buttonExit {
+.buttonBack {
     color: var(--text-color);
     align-items: center;
     font-size: 2.2rem;
@@ -105,64 +104,62 @@ footer {
     flex-direction: row;
 }
 
-.exitText {
+.backText {
     font-weight: 500;
 }
 
-.devices {
-    display: flex;
-    flex-direction: column;
-    gap: 44px;
-}
-
-.devices p {
+.title-course {
     font-size: 4rem;
-    font-weight: 300;
-    width: 25vw;
-}
-
-.devices span {
+    padding-bottom: 49px;
     color: var(--header-color);
-    font-weight: 500;
 }
 
-.buttonsCourse {
+.containerCard {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-wrap: wrap;
+    padding: 64px;
+    gap: 62px;
 }
 
-.course-container {
-    width: 400px;
+.imgStudent {
+    width: 200px;
     height: 200px;
+}
+
+.cardStudentStudying {
+    width: 200px;
+    height: 300px;
     background-color: var(--header-color);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
-    transition: .5s;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
 
-.course-container:hover {
-    border: 5px solid var(--body-color);
+.cardStudentStudying:hover {
+    transform: scale(1.1);
 }
 
-.info-course {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+.cardStudentFinish {
+    width: 200px;
+    height: 300px;
+    background-color: var(--header-square-yellow);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
-.info-course i {
-    color: var(--text-color);
-    font-size: 4.5rem;
+.cardStudentFinish:hover {
+    transform: scale(1.1);
 }
 
-.course-text {
-    font-size: 4rem;
-    color: var(--text-color);
+.imgStudent {
+    padding-bottom: 16px;
+}
+
+.nameStudent {
+    text-align: center;
     font-weight: 500;
+    color: var(--text-color);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 .contacts {

@@ -1,4 +1,4 @@
-var cursos = [
+export const cursos = [
     {
         "nome"  :   "001 - Técnico em Desenvolvimento de Sistemas",
         "sigla" :   "DS",
@@ -12,7 +12,3 @@ var cursos = [
         "carga" :   "1200"
     }
 ];
-
-module.exports = {
-    cursos
-}

@@ -4,6 +4,7 @@ import { loadCard } from "./homeAPI.js"
 
 const cards = await loadCard();
 
+console.log('entrei');
 const createCard = (card) => {
     const courseButtons = document.createElement('div')
     courseButtons.classList.add('buttonsCourse')
@@ -14,23 +15,24 @@ const createCard = (card) => {
     const courseInfo = document.createElement('div')
     courseInfo.classList.add('info-course')
 
-    const iconCourse = document.createElement('i')
-    iconCourse.src = `./${card.icone}`
+    const imageCourse = document.createElement('img')
+    imageCourse.classList.add('img_course')
+    imageCourse.src = `./${card.icone}`
 
     const nameCourse = document.createElement('h1')
     nameCourse.classList.add('course-text')
-    nameCourse.textContent = card.name
+    nameCourse.textContent = card.sigla
 
     courseButtons.append(containerCourse)
     containerCourse.append(courseInfo)
-    courseInfo.append(iconCourse, nameCourse)
+    courseInfo.append(imageCourse, nameCourse)
 
     return courseButtons
 }
 
 const loadCards = () => {
     const listCourses = document.getElementById('buttonsCourse')
-    const coursesList = cards.map(createCard)
+    const coursesList = cards.cursos.map(createCard)
 
     listCourses.replaceChildren(...coursesList)
 }
