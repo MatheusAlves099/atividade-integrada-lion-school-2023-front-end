@@ -48,6 +48,11 @@ header {
     width: 350px;
 }
 
+.statusCourse {
+    display: flex;
+    gap: 8px;
+}
+
 .squareBlue {
     height: 20px;
     width: 20px;
@@ -173,7 +178,6 @@ footer {
 .contacts-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 
 .icon-contacts {
@@ -221,9 +225,26 @@ footer {
 
 /* MOBILE */
 @media (max-width:640px) {
-    header {
-        justify-content: space-around;
-        padding: 20px 0;
+    .headerContent {
+        justify-content: space-between;
+        padding: 0 60px;
+    }
+
+    .headerStatus {
+        justify-content: space-between;
+        height: auto;
+        padding: 0 100px;
+    }
+
+    .buttonBack {
+        padding-left: 170px;
+    }
+
+    .legendaContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
     }
 
     .logoSchool img {
@@ -235,34 +256,18 @@ footer {
         font-size: 1.40rem;
     }
 
-    .buttonExit {
+    .buttonBack {
         font-size: 1.5rem;
     }
 
-    main {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-        padding: 32px;
-    }
-
-    .devices p {
+    .title-course {
         font-size: 2rem;
-        width: 300px;
         text-align: center;
+        padding: 0;
     }
 
-    .img_devices {
-        display: none;
-    }
-
-    .course-container {
-        width: 300px;
-        height: 160px;
-    }
-
-    .course-text {
-        font-size: 3rem;
+    .containerCard {
+        justify-content: center;
     }
 
     footer {
