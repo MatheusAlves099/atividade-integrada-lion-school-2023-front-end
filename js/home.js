@@ -1,10 +1,19 @@
 'use strict'
 
 import { loadCard } from "./homeAPI.js"
+import { showAlunos } from "./homeAPI.js";
 
 const cards = await loadCard();
+const alunos = await showAlunos();
 
-console.log('entrei');
+const exitWindow = () => {
+    const buttonExit = document.getElementById('buttonExit')
+    buttonExit.onclick = function () {
+        window.open()
+        window.close()
+    }
+}
+
 const createCard = (card) => {
     const courseButtons = document.createElement('div')
     courseButtons.classList.add('buttonsCourse')
@@ -38,3 +47,4 @@ const loadCards = () => {
 }
 
 loadCards()
+exitWindow()
