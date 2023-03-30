@@ -22,3 +22,11 @@ export const showAlunosStatus = async () => {
 
     return alunosStatus
 }
+
+export const showAlunosCurso = async (curso) => {
+    const url = `http://localhost:8080/v1/lion-school/alunes?curso=RDS`
+    const response = await fetch(url)
+    const alunosCurso = await response.json()
+
+    return alunosCurso
+}

@@ -2,19 +2,21 @@
 
 import { loadCard } from "./homeAPI.js"
 import { showAlunos } from "./homeAPI.js";
-import { showAlunosStatus } from "./homeAPI.js";
+import { showAlunosCurso } from "./homeAPI.js";
 
 const cards = await loadCard();
 const alunosAPI = await showAlunos();
-const alunosStatus = await showAlunosStatus();
+const alunosCurso = await showAlunosCurso();
 
-const curso = localStorage.getItem('curso')
-console.log(curso)
+console.log(alunosCurso);
+// const curso = localStorage.getItem('curso')
+// console.log(curso)
 
-const createCardAlunos = (aluno) => {
+const createCardAlunos = (aluno, indice) => {
     const titleCourse = document.createElement('h4')
     titleCourse.classList.add('title-course')
-    titleCourse.textContent = aluno.nome
+    console.log(alunosCurso.alunos[0].curso[0].nome);
+    titleCourse.textContent = alunosCurso.alunos[0].curso[0].nome
 
     const containerCard = document.createElement('div')
     containerCard.classList.add('containerCard')
@@ -39,9 +41,9 @@ const createCardAlunos = (aluno) => {
     nameStudent.classList.add('nameStudent')
     nameStudent.textContent = aluno.nome.toUpperCase()
     
-    containerCard.append(cardStudying, cardFinish)
+    containerCard.append(titleCourse, cardStudying, cardFinish)
     cardStudying.append(imgStudent, nameStudent)  
-    cardFinish.append(imgStudent, nameStudent)
+    // cardFinish.append(imgStudent, nameStudent)
 
     return containerCard
 }
@@ -53,4 +55,12 @@ const loadCardsAlunos = () => {
     listCourses.replaceChildren(...listaAlunos)
 }
 
+// const loadTitle = () => {
+//     const courseTitle = document.getElementById('containerCard')
+//     const listaAlunosCurso = alunosCurso.alunos.curso.map(createCardAlunos)
+
+//     courseTitle.replaceChildren(...listaAlunosCurso)
+// }
+
 loadCardsAlunos()
+// loadTitle()

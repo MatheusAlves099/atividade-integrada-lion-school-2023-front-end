@@ -156,7 +156,6 @@ footer {
 
 .title-course {
     font-size: 4rem;
-    padding-bottom: 49px;
     color: var(--header-color);
 }
 
@@ -310,6 +309,7 @@ footer {
 
     .containerCard {
         justify-content: center;
+        padding: 20px;
     }
 
     footer {
