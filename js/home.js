@@ -26,11 +26,16 @@ const createCard = (card) => {
 
     const imageCourse = document.createElement('img')
     imageCourse.classList.add('img_course')
-    imageCourse.src = `./${card.icone}`
+    imageCourse.src = `${card.icone}`
 
     const nameCourse = document.createElement('h1')
     nameCourse.classList.add('course-text')
     nameCourse.textContent = card.sigla
+
+    containerCourse.addEventListener('click', () => {
+        localStorage.setItem('curso', nameCourse.textContent)
+        console.log('click')
+    })
 
     courseButtons.append(containerCourse)
     containerCourse.append(courseInfo)

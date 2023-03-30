@@ -2,44 +2,55 @@
 
 import { loadCard } from "./homeAPI.js"
 import { showAlunos } from "./homeAPI.js";
+import { showAlunosStatus } from "./homeAPI.js";
 
 const cards = await loadCard();
-const alunos = await showAlunos();
+const alunosAPI = await showAlunos();
+const alunosStatus = await showAlunosStatus();
 
-const createCardAlunos = (card) => {
+const curso = localStorage.getItem('curso')
+console.log(curso)
+
+const createCardAlunos = (aluno) => {
     const titleCourse = document.createElement('h4')
     titleCourse.classList.add('title-course')
-    titleCourse.textContent = card.cursos.nome
+    titleCourse.textContent = aluno.nome
 
     const containerCard = document.createElement('div')
     containerCard.classList.add('containerCard')
 
-    if (card.status == 'Cursando') {
-        card.classList.add('cardStudentStudying')
-    } else {
-        card.classList.add('cardStudentFinish')
-    }
+    const cardStudying = document.createElement('div')
+    cardStudying.classList.add('cardStudentStudying')
+
+    const cardFinish = document.createElement('div')
+    cardFinish.classList.add('cardStudentFinish')
+
+    // if (aluno.status == 'Cursando') {
+    //     aluno.classList.add('cardStudentStudying')
+    // } else {
+    //     aluno.classList.add('cardStudentFinish')
+    // }
 
     const imgStudent = document.createElement('img')
     imgStudent.classList.add('imgStudent')
-    imgStudent.src = `./${card.icone}`
+    imgStudent.src = `${aluno.foto}`
 
     const nameStudent = document.createElement('p')
     nameStudent.classList.add('nameStudent')
-    nameStudent.textContent = card.nome
+    nameStudent.textContent = aluno.nome.toUpperCase()
+    
+    containerCard.append(cardStudying, cardFinish)
+    cardStudying.append(imgStudent, nameStudent)  
+    cardFinish.append(imgStudent, nameStudent)
 
-    titleCourse.append()
-    containerCard.append(imgStudent, nameStudent)
-
-    return titleCourse,
-        containerCard
+    return containerCard
 }
 
 const loadCardsAlunos = () => {
-    const listStudents = document.getElementById('containerCard')
-    const listaAlunos = alunos.curso.map(createCardAlunos)
+    const listCourses = document.getElementById('containerCard')
+    const listaAlunos = alunosAPI.alunos.map(createCardAlunos)
 
-    listStudents.replaceChildren(...listaAlunos)
+    listCourses.replaceChildren(...listaAlunos)
 }
 
 loadCardsAlunos()

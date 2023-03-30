@@ -114,9 +114,9 @@ footer {
     gap: 24px;
 }
 
-.info-course i {
-    color: var(--text-color);
-    font-size: 4.5rem;
+.img_course {
+    height: 130px;
+    width: 130px;
 }
 
 .course-text {
