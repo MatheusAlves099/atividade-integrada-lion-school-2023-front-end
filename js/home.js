@@ -18,8 +18,9 @@ const createCard = (card) => {
     const courseButtons = document.createElement('div')
     courseButtons.classList.add('buttonsCourse')
 
-    const containerCourse = document.createElement('div')
+    const containerCourse = document.createElement('a')
     containerCourse.classList.add('course-container')
+    containerCourse.setAttribute('href', 'http://127.0.0.1:5500/html/class.html')
 
     const courseInfo = document.createElement('div')
     courseInfo.classList.add('info-course')
@@ -31,11 +32,6 @@ const createCard = (card) => {
     const nameCourse = document.createElement('h1')
     nameCourse.classList.add('course-text')
     nameCourse.textContent = card.sigla
-
-    containerCourse.addEventListener('click', () => {
-        localStorage.setItem('curso', nameCourse.textContent)
-        console.log('click')
-    })
 
     courseButtons.append(containerCourse)
     containerCourse.append(courseInfo)

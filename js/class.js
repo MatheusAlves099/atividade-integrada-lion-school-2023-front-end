@@ -1,7 +1,6 @@
 'use strict'
 
 import { loadCard } from "./homeAPI.js"
-import { showAlunos } from "./homeAPI.js";
 import { showAlunosCurso } from "./homeAPI.js";
 
 const cards = await loadCard();
@@ -9,14 +8,12 @@ const alunosAPI = await showAlunos();
 const alunosCurso = await showAlunosCurso();
 
 console.log(alunosCurso);
-// const curso = localStorage.getItem('curso')
-// console.log(curso)
 
-const createCardAlunos = (aluno, indice) => {
+const createCardAlunos = (aluno) => {
     const titleCourse = document.createElement('h4')
     titleCourse.classList.add('title-course')
-    console.log(alunosCurso.alunos[0].curso[0].nome);
-    titleCourse.textContent = alunosCurso.alunos[0].curso[0].nome
+    // console.log(alunosCurso.alunos[0].curso[0].nome);
+    // titleCourse.textContent = alunosCurso.alunos[0].curso[0].nome
 
     const containerCard = document.createElement('div')
     containerCard.classList.add('containerCard')
@@ -41,9 +38,9 @@ const createCardAlunos = (aluno, indice) => {
     nameStudent.classList.add('nameStudent')
     nameStudent.textContent = aluno.nome.toUpperCase()
     
-    containerCard.append(titleCourse, cardStudying, cardFinish)
+    containerCard.append(cardStudying, cardFinish)
     cardStudying.append(imgStudent, nameStudent)  
-    // cardFinish.append(imgStudent, nameStudent)
+    cardFinish.append(imgStudent, nameStudent)
 
     return containerCard
 }

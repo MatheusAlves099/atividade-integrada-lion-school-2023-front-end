@@ -15,16 +15,16 @@ export const showAlunos = async () => {
 
 }
 
-export const showAlunosStatus = async () => {
-    const url = `http://localhost:8080/v1/lion-school/alunus`
-    const response = await fetch(url)
-    const alunosStatus = await response.json()
+// export const showAlunosStatus = async () => {
+//     const url = `http://localhost:8080/v1/lion-school/alunus`
+//     const response = await fetch(url)
+//     const alunosStatus = await response.json()
 
-    return alunosStatus
-}
+//     return alunosStatus
+// }
 
 export const showAlunosCurso = async (curso) => {
-    const url = `http://localhost:8080/v1/lion-school/alunes?curso=RDS`
+    const url = `http://localhost:8080/v1/lion-school/alunes?curso=DS`
     const response = await fetch(url)
     const alunosCurso = await response.json()
 
