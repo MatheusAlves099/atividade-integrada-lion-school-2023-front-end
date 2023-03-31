@@ -15,18 +15,22 @@ export const showAlunos = async () => {
 
 }
 
-// export const showAlunosStatus = async () => {
-//     const url = `http://localhost:8080/v1/lion-school/alunus`
-//     const response = await fetch(url)
-//     const alunosStatus = await response.json()
-
-//     return alunosStatus
-// }
-
-export const showAlunosCurso = async (curso) => {
-    const url = `http://localhost:8080/v1/lion-school/alunes?curso=DS`
+export const showAlunosCurso = async () => {
+    const url = `http://localhost:8080/v1/lion-school/alunos?curso=${curso}`
     const response = await fetch(url)
     const alunosCurso = await response.json()
 
     return alunosCurso
 }
+
+export const showAlunosMatricula = async () => {
+    const url = `http://localhost:8080/v1/lion-school/alunos/${matricula}`
+    const response = await fetch(url)
+    const alunosMatricula = await response.json()
+
+    return alunosMatricula
+
+}
+
+const curso = localStorage.getItem('curso')
+const matricula = localStorage.getItem('matricula')

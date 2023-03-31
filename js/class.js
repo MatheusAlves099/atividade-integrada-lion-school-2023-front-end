@@ -1,34 +1,46 @@
 'use strict'
 
-import { loadCard } from "./homeAPI.js"
 import { showAlunosCurso } from "./homeAPI.js";
 
-const cards = await loadCard();
-const alunosAPI = await showAlunos();
+// const cards = await loadCard();
+// const alunosAPI = await showAlunos();
 const alunosCurso = await showAlunosCurso();
-
-console.log(alunosCurso);
 
 const createCardAlunos = (aluno) => {
     const titleCourse = document.createElement('h4')
     titleCourse.classList.add('title-course')
-    // console.log(alunosCurso.alunos[0].curso[0].nome);
-    // titleCourse.textContent = alunosCurso.alunos[0].curso[0].nome
 
-    const containerCard = document.createElement('div')
+    const dropdownContainer = document.createElement('div')
+    dropdownContainer.classList.add('dropdownContainer')
+
+    const dropdownButton = document.createElement('button')
+    dropdownButton.classList.add('dropdownButton')
+
+    const dropdownContent = document.createElement('div')
+    dropdownContent.classList.add('dropdownContent')
+
+    const finalizadoStatus = document.createElement('a')
+    finalizadoStatus.classList.add('finalizado')
+
+    const cursandoStatus = document.createElement('a')
+    cursandoStatus.classList.add('cursando')
+
+    const matriculaAluno = document.createElement('span')
+    matriculaAluno.classList.add('matricula')
+    matriculaAluno.textContent = aluno.matricula
+
+    const containerCard = document.createElement('a')
     containerCard.classList.add('containerCard')
+    containerCard.setAttribute('href', 'http://127.0.0.1:5500/html/studentInfo.html')
+    containerCard.addEventListener('click', () => {
+        localStorage.setItem('matricula', matriculaAluno.textContent)
+    })
 
-    const cardStudying = document.createElement('div')
-    cardStudying.classList.add('cardStudentStudying')
-
-    const cardFinish = document.createElement('div')
-    cardFinish.classList.add('cardStudentFinish')
-
-    // if (aluno.status == 'Cursando') {
-    //     aluno.classList.add('cardStudentStudying')
-    // } else {
-    //     aluno.classList.add('cardStudentFinish')
-    // }
+    if (alunosCurso.alunos.status == 'Cursando') {
+        containerCard.classList.add('cardStudentStudying')
+    } else {
+        containerCard.classList.add('cardStudentFinish')
+    }
 
     const imgStudent = document.createElement('img')
     imgStudent.classList.add('imgStudent')
@@ -37,17 +49,19 @@ const createCardAlunos = (aluno) => {
     const nameStudent = document.createElement('p')
     nameStudent.classList.add('nameStudent')
     nameStudent.textContent = aluno.nome.toUpperCase()
-    
-    containerCard.append(cardStudying, cardFinish)
-    cardStudying.append(imgStudent, nameStudent)  
-    cardFinish.append(imgStudent, nameStudent)
+
+    // dropdownContainer.append()
+    // dropdownContainer.append(dropdownButton, dropdownContent)
+    // dropdownContent.append(cursandoStatus, finalizadoStatus)
+    titleCourse.append()
+    containerCard.append(imgStudent, nameStudent)
 
     return containerCard
 }
 
 const loadCardsAlunos = () => {
     const listCourses = document.getElementById('containerCard')
-    const listaAlunos = alunosAPI.alunos.map(createCardAlunos)
+    const listaAlunos = alunosCurso.alunos.map(createCardAlunos)
 
     listCourses.replaceChildren(...listaAlunos)
 }

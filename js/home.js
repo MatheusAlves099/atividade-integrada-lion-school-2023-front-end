@@ -4,7 +4,7 @@ import { loadCard } from "./homeAPI.js"
 import { showAlunos } from "./homeAPI.js";
 
 const cards = await loadCard();
-const alunos = await showAlunos();
+// const alunos = await showAlunos();
 
 const exitWindow = () => {
     const buttonExit = document.getElementById('buttonExit')
@@ -32,6 +32,10 @@ const createCard = (card) => {
     const nameCourse = document.createElement('h1')
     nameCourse.classList.add('course-text')
     nameCourse.textContent = card.sigla
+
+    containerCourse.addEventListener('click', () => {
+        localStorage.setItem('curso', nameCourse.textContent)
+    })
 
     courseButtons.append(containerCourse)
     containerCourse.append(courseInfo)
