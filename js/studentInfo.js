@@ -9,8 +9,6 @@ import { showAlunosMatricula } from "./homeAPI.js";
 const showAlunosMatriculas = await showAlunosMatricula();
 
 const createCardAluno = (aluno) => {
-    console.log('uiiui');
-
     // const cardContainer = document.createElement('div')
     // cardContainer.classList.add('cardsContainer')
 
@@ -23,7 +21,7 @@ const createCardAluno = (aluno) => {
 
     const nameStudent = document.createElement('p')
     nameStudent.classList.add('nameStudent')
-    nameStudent.textContent = aluno.nome
+    nameStudent.textContent = aluno.nome.toUpperCase()
     
     //cardContainer.append(containerCard)
     containerCard.append(imgStudent, nameStudent)
@@ -31,9 +29,6 @@ const createCardAluno = (aluno) => {
     return containerCard
 }
 const createCardGrafico = () => {
-
-    console.log('entrei rapaz');
-
     const cardNotes = document.createElement('div')
     cardNotes.classList.add('cardNotes')
 
@@ -85,6 +80,9 @@ const createCardGrafico = () => {
         } else if (disciplina.media >= 50 && disciplina.media <= 70) {
             numerosGrafico.classList.add('numeroNome-Amarelo')
             disciplinas.classList.add('numeroNome-Amarelo')
+        } else {
+            numerosGrafico.classList.add('numeroNome-Azul')
+            disciplinas.classList.add('numeroNome-Azul')
         }
 
     })
@@ -107,4 +105,3 @@ const loadCardAluno = () => {
     
 }
 loadCardAluno()
-console.log('teste')

@@ -42,7 +42,8 @@ header {
 }
 
 .status {
-    width: 130vh;
+    padding-right: 135vh;
+    width: 10vh;
 }
 
 .dropdownContainer {
@@ -281,6 +282,10 @@ footer {
         padding: 0 100px;
     }
 
+    .status {
+        padding-right: 0;
+    }
+
     .buttonBack {
         padding-left: 170px;
     }
@@ -306,7 +311,7 @@ footer {
     }
 
     .title-course {
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         padding: 35px;
     }

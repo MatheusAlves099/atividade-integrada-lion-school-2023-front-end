@@ -128,7 +128,7 @@ footer {
     display: flex;
     flex-direction: row;
     margin-top: 57px;
-    gap: 45px;
+    gap: 46px;
     text-align: center;
     justify-content: center;
     font-size: 1rem;
@@ -144,6 +144,7 @@ footer {
     background-color: #EEEFF8;
     border-radius: 4px 4px 0px 0px;
 }
+
 .bar {
     display: flex;
     justify-content: space-between;
@@ -164,106 +165,6 @@ footer {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.firstDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.firstDisciplineBarColor {
-    width: 16px;
-    height: 248px;
-    background-color: var(--header-color);
-    box-shadow: 0px 0px 24px var(--header-color);
-    border-radius: 4px 4px 0px 0px;
-}
-
-.secondDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.secondDisciplineBarColor {
-    width: 16px;
-    height: 87px;
-    background-color: var(--red-note);
-    box-shadow: 0px 0px 24px var(--red-note);
-    border-radius: 4px 4px 0px 0px;
-}
-
-.thirdDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.thirdDisciplineBarColor {
-    width: 16px;
-    height: 150px;
-    background-color: var(--header-square-yellow);
-    box-shadow: 0px 0px 24px var(--header-square-yellow);
-    border-radius: 4px 4px 0px 0px;
-}
-
-.fourthDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.fourthDisciplineBarColor {
-    width: 16px;
-    height: 248px;
-    background-color: var(--header-color);
-    box-shadow: 0px 0px 24px #3347B0;
-    border-radius: 4px 4px 0px 0px;
-}
-
-.fifthDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.fifthDisciplineBarColor {
-    width: 16px;
-    height: 206px;
-    background-color: var(--header-color);
-    box-shadow: 0px 0px 24px #3347B0;
-    border-radius: 4px 4px 0px 0px;
-}
-
-.sixthDisciplineBar {
-    width: 16px;
-    height: 300px;
-    background-color: var(--bars-color);
-    align-items: flex-end;
-    display: flex;
-}
-
-.sixthDisciplineBarColor {
-    width: 16px;
-    height: 300px;
-    background-color: var(--header-color);
-    box-shadow: 0px 0px 24px #3347B0;
-    border-radius: 4px 4px 0px 0px;
-}
-
-.sixthDisciplineNumber {
-    color: var(--header-color);
-}
-
 .barra-vermelho {
     background-color: var(--red-note);
     box-shadow: 0px 0px 24px var(--red-note);
@@ -272,6 +173,10 @@ footer {
 .barra-amarelo {
     background-color: var(--header-square-yellow);
     box-shadow: 0px 0px 24px var(--header-square-yellow);
+}
+
+.numeroNome-Azul {
+    color: var(--header-color);
 }
 
 .numeroNome-Vermelho {
@@ -284,9 +189,8 @@ footer {
 
 .nameDisciplineContainer {
     display: flex;
-    flex-direction: row;
     margin-top: 16px;
-    gap: 36px;
+    gap: 41px;
     text-align: center;
     justify-content: center;
     font-size: 1rem;
@@ -394,75 +298,60 @@ footer {
     }
 
     .cardNotes {
-        width: 250px;
-        height: 250px;
+        width: 360px;
+        height: 380px;
     }
 
+    .bar {
+        width: 12px;
+        height: 10px;
+        background-color: #3347B0;
+        text-align: center;
+        box-shadow: 0px 0px 24px #3347B0;
+        border-radius: 4px 4px 0px 0px;
+    }
+    
     .disciplineContainer {
         width: 100%;
         margin-top: 20px;
+        padding-bottom: 100px;
         gap: 20px;
     }
 
     .disciplineBar {
         width: 100%;
-        height: 150px;
+        height: 80px;
         align-items: center;
         justify-content: center;
-        gap: 23px;
-    }
-
-    .firstDisciplineBar {
-        height: 150px;
-    }
-
-    .firstDisciplineBarColor {
-        height: 140px;
-    }
-
-    .secondDisciplineBar {
-        height: 150px;
-    }
-
-    .secondDisciplineBarColor {
-        height: 50px;
-    }
-
-    .thirdDisciplineBar {
-        height: 150px;
-    }
-
-    .thirdDisciplineBarColor {
-        height: 75px;
-    }
-
-    .fourthDisciplineBar {
-        height: 150px;
-    }
-
-    .fourthDisciplineBarColor {
-        height: 140px;
-    }
-
-    .fifthDisciplineBar {
-        height: 150px;
-    }
-
-    .fifthDisciplineBarColor {
-        height: 125px;
-    }
-
-    .sixthDisciplineBar {
-        height: 150px;
-    }
-
-    .sixthDisciplineBarColor {
-        height: 150px;
+        gap: 29px;
     }
     
     .nameDisciplineContainer {
         width: 100%;
+        padding-top: 100px;
         gap: 10px;
+    }
+
+    .barra-vermelho {
+        background-color: var(--red-note);
+        box-shadow: 0px 0px 24px var(--red-note);
+    }
+    
+    .barra-amarelo {
+        background-color: var(--header-square-yellow);
+        box-shadow: 0px 0px 24px var(--header-square-yellow);
+    }
+    
+    .numeroNome-Azul {
+        color: var(--header-color);
+    }
+    
+    .numeroNome-Vermelho {
+        color: #C11010;
+    }
+    
+    .numeroNome-Amarelo {
+        color: #E5B657;
     }
 
     footer {

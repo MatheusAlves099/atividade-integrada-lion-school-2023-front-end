@@ -1,5 +1,5 @@
 export const loadCard = async () => {
-    const url = `http://localhost:8080/v1/lion-school/cursos`
+    const url = `https://lion-school-2023.cyclic.app/v1/lion-school/cursos`
     const response = await fetch(url)
     const card = await response.json()
 
@@ -7,7 +7,7 @@ export const loadCard = async () => {
 }
 
 export const showAlunos = async () => {
-    const url = `http://localhost:8080/v1/lion-school/alunos`
+    const url = `https://lion-school-2023.cyclic.app/v1/lion-school/alunos`
     const response = await fetch(url)
     const alunos = await response.json()
 
@@ -16,7 +16,7 @@ export const showAlunos = async () => {
 }
 
 export const showAlunosCurso = async () => {
-    const url = `http://localhost:8080/v1/lion-school/alunos?curso=${curso}`
+    const url = `https://lion-school-2023.cyclic.app/v1/lion-school/alunos?curso=${curso}`
     const response = await fetch(url)
     const alunosCurso = await response.json()
 
@@ -24,13 +24,21 @@ export const showAlunosCurso = async () => {
 }
 
 export const showAlunosMatricula = async () => {
-    const url = `http://localhost:8080/v1/lion-school/alunos/${matricula}`
+    const url = `https://lion-school-2023.cyclic.app/v1/lion-school/alunos/${matricula}`
     const response = await fetch(url)
     const alunosMatricula = await response.json()
 
     return alunosMatricula
 
 }
+export const showAlunosStatus = async (idDoBotaoClicado) => {
+    const url = `https://lion-school-2023.cyclic.app/v1/lion-school/alunos?curso=${curso}&status=${idDoBotaoClicado}`
+    const response = await fetch(url)
+    const alunosStatus = await response.json()
+console.log(alunosStatus);
+    return alunosStatus
+}
 
+//const status = localStorage.getItem('status')
 const curso = localStorage.getItem('curso')
 const matricula = localStorage.getItem('matricula')
