@@ -112,7 +112,7 @@ footer {
 }
 
 .cardNotes {
-    width: 500px;
+    width: 600px;
     height: 500px;
     gap: 240px;
     background-color: var(--text-color);
