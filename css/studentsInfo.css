@@ -137,24 +137,21 @@ footer {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.firstDisciplineNumber {
-    color: var(--header-color);
+.disciplinesBar {
+    display: flex;
+    height: 300px;
+    align-items: flex-end;
+    background-color: #EEEFF8;
+    border-radius: 4px 4px 0px 0px;
 }
-
-.secondDisciplineNumber {
-    color: var(--red-note);
-}
-
-.thirdDisciplineNumber {
-    color: var(--header-square-yellow);
-}
-
-.fourthDisciplineNumber {
-    color: var(--header-color);
-}
-
-.fifthDisciplineNumber {
-    color: var(--header-color);
+.bar {
+    display: flex;
+    justify-content: space-between;
+    width: 16px;
+    background-color: #3347B0;
+    text-align: center;
+    box-shadow: 0px 0px 24px #3347B0;
+    border-radius: 4px 4px 0px 0px;
 }
 
 .disciplineBar {
@@ -265,6 +262,24 @@ footer {
 
 .sixthDisciplineNumber {
     color: var(--header-color);
+}
+
+.barra-vermelho {
+    background-color: var(--red-note);
+    box-shadow: 0px 0px 24px var(--red-note);
+}
+
+.barra-amarelo {
+    background-color: var(--header-square-yellow);
+    box-shadow: 0px 0px 24px var(--header-square-yellow);
+}
+
+.numeroNome-Vermelho {
+    color: #C11010;
+}
+
+.numeroNome-Amarelo {
+    color: #E5B657;
 }
 
 .nameDisciplineContainer {

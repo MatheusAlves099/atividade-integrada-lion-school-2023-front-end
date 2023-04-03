@@ -6,9 +6,20 @@ import { showAlunosCurso } from "./homeAPI.js";
 // const alunosAPI = await showAlunos();
 const alunosCurso = await showAlunosCurso();
 
+const loadTitle = (aluno) => {
+
+    const pai = document.getElementById('titulo') 
+
+    const nomeTitulo = document.createElement('h2')
+    nomeTitulo.classList.add()
+    nomeTitulo.textContent = aluno.nomeCurso
+    // console.log(aluno.NomeCurso);
+
+    pai.append(nomeTitulo)
+    
+}
+
 const createCardAlunos = (aluno) => {
-    const titleCourse = document.createElement('h4')
-    titleCourse.classList.add('title-course')
 
     const dropdownContainer = document.createElement('div')
     dropdownContainer.classList.add('dropdownContainer')
@@ -36,7 +47,7 @@ const createCardAlunos = (aluno) => {
         localStorage.setItem('matricula', matriculaAluno.textContent)
     })
 
-    if (alunosCurso.alunos.status == 'Cursando') {
+    if (aluno.status == 'Cursando') {
         containerCard.classList.add('cardStudentStudying')
     } else {
         containerCard.classList.add('cardStudentFinish')
@@ -53,7 +64,7 @@ const createCardAlunos = (aluno) => {
     // dropdownContainer.append()
     // dropdownContainer.append(dropdownButton, dropdownContent)
     // dropdownContent.append(cursandoStatus, finalizadoStatus)
-    titleCourse.append()
+    
     containerCard.append(imgStudent, nameStudent)
 
     return containerCard
@@ -74,4 +85,4 @@ const loadCardsAlunos = () => {
 // }
 
 loadCardsAlunos()
-// loadTitle()
+loadTitle(alunosCurso)
