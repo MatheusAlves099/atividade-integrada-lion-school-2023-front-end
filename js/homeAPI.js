@@ -35,7 +35,7 @@ export const showAlunosStatus = async (idDoBotaoClicado) => {
     const url = `https://lion-school-2023.cyclic.app/v1/lion-school/alunos?curso=${curso}&status=${idDoBotaoClicado}`
     const response = await fetch(url)
     const alunosStatus = await response.json()
-console.log(alunosStatus);
+    
     return alunosStatus
 }
 

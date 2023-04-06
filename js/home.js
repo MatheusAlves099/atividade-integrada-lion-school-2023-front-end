@@ -1,10 +1,8 @@
 'use strict'
 
 import { loadCard } from "./homeAPI.js"
-import { showAlunos } from "./homeAPI.js";
 
 const cards = await loadCard();
-// const alunos = await showAlunos();
 
 const exitWindow = () => {
     const buttonExit = document.getElementById('buttonExit')
@@ -20,7 +18,7 @@ const createCard = (card) => {
 
     const containerCourse = document.createElement('a')
     containerCourse.classList.add('course-container')
-    containerCourse.setAttribute('href', 'http://127.0.0.1:5500/html/class.html')
+    containerCourse.setAttribute('href', '/html/class.html')
 
     const courseInfo = document.createElement('div')
     courseInfo.classList.add('info-course')
