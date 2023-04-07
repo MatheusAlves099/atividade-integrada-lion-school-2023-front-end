@@ -4,13 +4,11 @@ import { loadCard } from "./homeAPI.js"
 
 const cards = await loadCard();
 
-const exitWindow = () => {
-    const buttonExit = document.getElementById('buttonExit')
-    buttonExit.onclick = function () {
-        window.open()
+const buttonClose = document.getElementById('buttonExit')
+buttonClose.addEventListener('click', () => {
+        alert('Você está deixando a página.')
         window.close()
-    }
-}
+})
 
 const createCard = (card) => {
     const courseButtons = document.createElement('div')
@@ -18,7 +16,7 @@ const createCard = (card) => {
 
     const containerCourse = document.createElement('a')
     containerCourse.classList.add('course-container')
-    containerCourse.setAttribute('href', '/html/class.html')
+    containerCourse.setAttribute('href', '../html/class.html')
 
     const courseInfo = document.createElement('div')
     courseInfo.classList.add('info-course')
@@ -50,4 +48,3 @@ const loadCards = () => {
 }
 
 loadCards()
-exitWindow()

@@ -9,7 +9,7 @@
 
 # Objetivo
 
-A atividade tem como objetivo integrar as disciplinas de PWFE (Programação web Front-end) e PWBE (Programação web Back-end) do curso de desenvolvimento de sistemas do SENAI Jandira.
+A atividade tem como objetivo integrar as disciplinas de PWFE (Programação web Front-end) e PWBE (Programação web Back-end) do curso de desenvolvimento de sistemas (2º Semestre) do SENAI Jandira.
 
 O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto o back-end como o front-end.
 
@@ -29,17 +29,26 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 # Desktop Imagens
 
 ![](./img/home_screenshot.png)
+![](./img/class_screenshot.png)
 ![](./img/student_info_screenshot.png)
 
-# Tecnologia utilizada 
+# Tecnologias utilizadas 
 
 - HTML5
 - CSS3
 - JavaScript
+- Node.js
+- Postman
 - Responsividade
 - Markdown  
 - JSON
 
-# Autor 
+# Autores
 
-- [Matheus Alves Reis da Silva](https://github.com/MatheusAlves099)
+- Front-End: [Matheus Alves Reis da Silva](https://github.com/MatheusAlves099)
+- Back-End: [Muryllo Vieira](https://github.com/muryllovieira)
+
+
+# Professores
+- [Fernando Leonid](https://github.com/fernandoleonid)
+- [Marcel Teixeira](https://github.com/marcelnt)

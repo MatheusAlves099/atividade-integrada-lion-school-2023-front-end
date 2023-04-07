@@ -3,28 +3,28 @@
 import { showAlunosCurso } from "./homeAPI.js";
 import { showAlunosStatus } from "./homeAPI.js";
 
-const alunosCurso = await showAlunosCurso();
-var estado;
+const studentCourse = await showAlunosCurso();
+var state;
 
 const loadTitle = (aluno) => {
 
-    const titleContainer = document.getElementById('titulo')
+    const titleContainer = document.getElementById('title')
 
-    const nomeTitulo = document.createElement('h2')
-    nomeTitulo.classList.add()
-    nomeTitulo.textContent = aluno.nomeCurso
+    const titleName = document.createElement('h2')
+    titleName.classList.add()
+    titleName.textContent = aluno.nomeCurso
 
-    titleContainer.append(nomeTitulo)
+    titleContainer.append(titleName)
 }
 
-const createCardAlunos = (aluno) => {
+const createCardStudent = (aluno) => {
     const matriculaAluno = document.createElement('span')
     matriculaAluno.classList.add('matricula')
     matriculaAluno.textContent = aluno.matricula
 
     const containerCard = document.createElement('a')
     containerCard.classList.add('containerCard')
-    containerCard.setAttribute('href', '/html/studentInfo.html')
+    containerCard.setAttribute('href', '../html/studentInfo.html')
     containerCard.addEventListener('click', () => {
         localStorage.setItem('matricula', matriculaAluno.textContent)
     })
@@ -48,76 +48,76 @@ const createCardAlunos = (aluno) => {
     return containerCard
 }
 
-const cursandoFinalizado = () => {
+const studyingAndFinished = () => {
     const buttons = document.querySelectorAll('.card-')
 
     buttons.forEach(button => {
         button.addEventListener('click', async () => {
 
-            const idClicado = button.id
+            const idClicked = button.id
             if (button.id == "status") {
                 loadCardsAlunos()
             } else {
-                const retorna = await showAlunosStatus(idClicado)
-                const cardJson = retorna.alunos.map(createCardAlunos)
+                const returns = await showAlunosStatus(idClicked)
+                const cardJSON = returns.alunos.map(createCardStudent)
                 const listCourses = document.getElementById('containerCard')
-                listCourses.replaceChildren(...cardJson)
-                console.log(await showAlunosStatus(idClicado));
+                listCourses.replaceChildren(...cardJSON)
             }
-            estado = idClicado
-            console.log(estado);
+            state = idClicked
         })
     })
 }
-const getAnoConclusao = (alunos) => {
-    let anos = []
+
+const getYearConclusion = (alunos) => {
+    let years = []
 
     alunos.forEach(aluno => {
-        anos.push(aluno.curso[0].conclusao)
+        years.push(aluno.curso[0].conclusao)
     })
 
-    let anosConclusao = anos.filter((este, i) => anos.indexOf(este) === i)
-    return anosConclusao.sort()
+    let conclusionYears = years.filter((este, i) => years.indexOf(este) === i)
+    return conclusionYears.sort()
 }
-const anos = getAnoConclusao(alunosCurso.alunos)
 
-const anoConc = async (ano) => {
-    const alunoJson = {}
-    const arrayAluno = []
+const years = getYearConclusion(studentCourse.alunos)
 
-    alunosCurso.aluno.forEach(aluno => {
-        if (aluno.curso[0].conclusao == ano) {
-            arrayAluno.push(aluno)
+const conclusionYear = async (year) => {
+    const studentJSON = {}
+    const arrayStudent = []
+
+    studentCourse.alunos.forEach(aluno => {
+        if (aluno.curso[0].conclusao == year) {
+            arrayStudent.push(aluno)
         }
     })
-    alunoJson.alunos = arrayAluno
-    return alunoJson
+    studentJSON.alunos = arrayStudent
+    return studentJSON
 }
-const createCardAno = (anos) => {
-    const pai = document.createElement('dropdownButtonYear')
-    anos.forEach(ano => {
+
+const createCardYear = (years) => {
+    const container = document.getElementById('dropdownYearContent')
+    years.forEach(year => {
         const card = document.createElement('a')
-        card.id = `${ano}`
-        card.innerHTML = ano
+        card.id = `${year}`
+        card.innerHTML = year
         card.addEventListener('click', async () => {
-            const retorna = await anoConc(ano)
-            const cardJson = retorna.alunos.map(createCardAlunos)
-            const listCourses = document.getElementById('containerCard')
-            listCourses.replaceChildren(...cardJson)
+            const returns = await conclusionYear(year)
+            const cardJSON = returns.alunos.map(createCardStudent)
+            const card = document.getElementById('containerCard')
+            card.replaceChildren(...cardJSON)
         })
-        pai.append(card)
+        container.append(card)
     })
 }
 
-
-const loadCardsAlunos = () => {
+const loadCardStudents = () => {
     const listCourses = document.getElementById('containerCard')
-    const listaAlunos = alunosCurso.alunos.map(createCardAlunos)
+    const listStudents = studentCourse.alunos.map(createCardStudent)
 
-    listCourses.replaceChildren(...listaAlunos)
+    listCourses.replaceChildren(...listStudents)
 }
 
-createCardAno(anos)
-cursandoFinalizado()
-loadCardsAlunos()
-loadTitle(alunosCurso)
+createCardYear(years)
+studyingAndFinished()
+loadCardStudents()
+loadTitle(studentCourse)
