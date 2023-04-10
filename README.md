@@ -4,9 +4,6 @@
 
 [Link - Figma](https://www.figma.com/file/INOJT5FNYh2Bw7Jjvt1bWR/PWFE---Trabalho-Integrado---Lion-School?t=0ofjiAFBZwFR84Ic-6)
 
-[Link - Github Page](https://matheusalves099.github.io/atividade-integrada-lion-school-2023-front-end/html/index)
-
-
 # Objetivo
 
 A atividade tem como objetivo integrar as disciplinas de PWFE (Programação web Front-end) e PWBE (Programação web Back-end) do curso de desenvolvimento de sistemas (2º Semestre) do SENAI Jandira.
