@@ -55,8 +55,8 @@ const studyingAndFinished = () => {
         button.addEventListener('click', async () => {
 
             const idClicked = button.id
-            if (button.id == "status") {
-                loadCardsAlunos()
+            if (button.id == 'status') {
+                loadCardStudents()
             } else {
                 const returns = await showAlunosStatus(idClicked)
                 const cardJSON = returns.alunos.map(createCardStudent)
