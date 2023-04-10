@@ -40,7 +40,9 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - Node.js
 - Postman
 - Responsividade
-- Markdown  
+- Markdown
+- Cyclic
+- Vercel
 - JSON
 
 # Autores
