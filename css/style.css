@@ -52,7 +52,7 @@ footer {
     color: var(--text-color);
 }
 
-.buttonExit {
+.buttonExit a {
     color: var(--text-color);
     align-items: center;
     font-size: 2.2rem;
