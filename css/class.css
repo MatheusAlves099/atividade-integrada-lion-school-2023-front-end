@@ -36,14 +36,12 @@ header {
     align-items: center;
     height: 50px;
     width: 100%;
+    padding: 0 120px;
     color: var(--header-color);
     font-weight: 500;
     background-color: var(--header-status-color);
 }
 
-.status {
-    padding-left: 120px;
-}
 
 .dropdownContainer {
     position: relative;
@@ -86,7 +84,6 @@ header {
 .dropdownYear {
     position: relative;
     display: inline-block;
-    padding-right: 130vh;
 }
 
 .dropdownYearContent {
@@ -317,6 +314,7 @@ footer {
 
     .headerStatus {
         justify-content: space-between;
+        padding: 0 0;
         height: auto;
     }
 
@@ -325,6 +323,8 @@ footer {
     }
 
     .status {
+        display: flex;
+        gap: 10px;
         padding-left: 60px;
     }
 
