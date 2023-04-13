@@ -24,6 +24,7 @@ const createCard = (card) => {
     const imageCourse = document.createElement('img')
     imageCourse.classList.add('img_course')
     imageCourse.src = `${card.icone}`
+    imageCourse.alt = "Icones dos cursos"
 
     const nameCourse = document.createElement('h1')
     nameCourse.classList.add('course-text')
