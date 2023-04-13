@@ -13,11 +13,22 @@
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/studentsInfo.css">
+    <link rel="stylesheet" href="../css/vlibras.css">
     <script src="../js/studentInfo.js" defer type="module"></script>
 </head>
 
 <body>
     <header>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
         <div class="headerContent">
             <div class="logoSchool">
                 <a title="Voltar para a página inicial" href="../index.html">
