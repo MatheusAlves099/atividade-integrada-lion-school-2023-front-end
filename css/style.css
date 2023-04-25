@@ -3,6 +3,7 @@
     --body-color: #f5f5f5;
     --footer-color: #3347B0;
     --text-color: #FFFFFF;
+    --text-description-color: #000;
 }
 
 body {
@@ -11,6 +12,51 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    background-color: var(--body-color);
+}
+
+body.dark {
+    background-color: #000;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: var(--text-color);
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 22px;
+    width: 48px;
+
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: var(--header-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+
+    height: 20px;
+    width: 20px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(26px);
 }
 
 header {
@@ -79,6 +125,7 @@ footer {
     font-size: 4rem;
     font-weight: 300;
     width: 29vw;
+    color: var(--text-description-color);
 }
 
 .devices span {
@@ -185,7 +232,8 @@ footer {
 @media (max-width:640px) {
     header {
         justify-content: space-around;
-        padding: 20px 0;
+        gap: 50px;
+        padding: 0 5px;
     }
 
     .logoSchool img {
@@ -193,9 +241,55 @@ footer {
         width: 50px;
     }
 
-    .textSchool {
-        font-size: 1.40rem;
+    .logoSchool {
+        width: 130px;
+        gap: 5px;
     }
+
+    .textSchool {
+        font-size: 1.5rem;
+    }
+
+    .checkbox {
+        opacity: 0;
+        position: absolute;
+    }
+    
+    .label {
+        background-color: var(--text-color);
+        border-radius: 50px;
+        cursor: pointer;
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        padding: 5px;
+        position: relative;
+        height: 12px;
+        width: 38px;
+    
+        transform: scale(1.5);
+    }
+    
+    .label .ball {
+        background-color: var(--header-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+    
+        height: 10px;
+        width: 10px;
+    
+        transform: translateX(0px);
+        transition: transform 0.2s linear;
+    }
+    
+    .checkbox:checked + .label .ball {
+        transform: translateX(14px);
+    }
+    
 
     .buttonExit {
         font-size: 1.5rem;

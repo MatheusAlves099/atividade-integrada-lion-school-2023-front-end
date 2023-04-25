@@ -67,7 +67,7 @@ header {
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0  10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropdownContent a {
@@ -105,7 +105,7 @@ header {
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0  10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropdownYearContent a {
@@ -242,11 +242,11 @@ footer {
 
 .nameStudent {
     text-align: center;
+    width: 90%;
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-color);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    text-shadow: 0px 4px 4px rgba(34, 34, 34, 0.25);
 }
 
 .contacts {
@@ -308,8 +308,17 @@ footer {
 /* MOBILE */
 @media (max-width:640px) {
     .headerContent {
-        justify-content: space-between;
-        padding: 0 60px;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .logoSchool img {
+        height: 65px;
+        width: 50px;
+    }
+
+    .textSchool {
+        font-size: 1.5rem;
     }
 
     .headerStatus {
@@ -326,10 +335,6 @@ footer {
         display: flex;
         gap: 10px;
         padding-left: 60px;
-    }
-
-    .buttonBack {
-        padding-left: 170px;
     }
 
     .legendaContainer {

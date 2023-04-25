@@ -256,12 +256,8 @@ footer {
 /* MOBILE */
 @media (max-width:640px) {
     .headerContent {
-        justify-content: space-between;
-        padding: 0 60px;
-    }
-
-    .buttonBack {
-        padding-left: 170px;
+        justify-content: space-around;
+        padding: 0;
     }
 
     .logoSchool img {
